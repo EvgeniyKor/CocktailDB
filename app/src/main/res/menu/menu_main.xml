@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.jeka.cocktaildb.mvp.MainActivity">
+    <item
+        android:id="@+id/menu_filter"
+        android:icon="@drawable/filter"
+        android:visible="true"
+        android:title="@string/str_filters"
+        app:showAsAction="ifRoom"/>
+</menu>

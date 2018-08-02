@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#f5f5f5</color>
+    <color name="colorAccent">#000000</color>
+    <color name="actionbar_background">#ffffff</color>
+    <color name="actionbar_text_color">#000000</color>
+    <color name="text_color">#de000000</color>
+</resources>
