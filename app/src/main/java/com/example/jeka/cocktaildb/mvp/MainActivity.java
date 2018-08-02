@@ -137,6 +137,7 @@ public class MainActivity extends AppCompatActivity implements ICallbackMainFrag
 
 
     private void initFilterList() {
+        mFilterList.clear();
         mFilterList.add("Ordinary Drink");
         mFilterList.add("Cocktail");
         mFilterList.add("Milk / Float / Shake");
@@ -178,11 +179,15 @@ public class MainActivity extends AppCompatActivity implements ICallbackMainFrag
 
     @Override
     public void onFiltersChanged(List<String> filters) {
-        filterMenu.setIcon(buildCounterDrawable(R.drawable.filter));
         displayMainFragment();
-        if (filters.isEmpty())
+        if (filters.isEmpty()){
+            filterMenu.setIcon(R.drawable.filter);
+            initFilterList();
+            presenter.changedFilters(mFilterList);
             return;
+        }
         if (!filters.equals(mFilterList)){
+            filterMenu.setIcon(buildCounterDrawable(R.drawable.filter));
             this.mFilterList = filters;
             presenter.changedFilters(filters);
         }
