@@ -44,6 +44,11 @@ public class MainPresenter {
                     mainActivity.showDrinks(items.subList(0, items.size()));
                 } else mainActivity.showDrinks(items.subList(0, NUMBER_ON_PAGE + countHeader));
             }
+
+            @Override
+            public void onFailure() {
+                mainActivity.setLoading(false);
+            }
         });
     }
 
@@ -67,7 +72,12 @@ public class MainPresenter {
                     mainActivity.showNewDrinks(items.subList(count, items.size()));
                 else mainActivity.showNewDrinks(items.subList(count, sum));
             }
-        });
+
+                @Override
+                public void onFailure() {
+                    mainActivity.setLoading(false);
+                }
+            });
     }
 
     public void changedFilters(List<String> filters) {

@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.jeka.cocktaildb.fragment.FilterFragment;
 import com.example.jeka.cocktaildb.fragment.ICallbackFilterFragment;
@@ -191,5 +192,10 @@ public class MainActivity extends AppCompatActivity implements ICallbackMainFrag
             this.mFilterList = filters;
             presenter.changedFilters(filters);
         }
+    }
+
+    public void setLoading(boolean b) {
+        mainFragment.setLoading(b);
+        Toast.makeText(this, "onFailure", Toast.LENGTH_SHORT).show();
     }
 }

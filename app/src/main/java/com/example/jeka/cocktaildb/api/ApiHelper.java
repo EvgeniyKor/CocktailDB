@@ -43,6 +43,7 @@ public class ApiHelper {
             @Override
             public void onFailure(Call<Drinks> call, Throwable t) {
                 Log.e("Retrofit", "onFailure");
+                callback.onFailure();
                 t.printStackTrace();
             }
         });
@@ -51,6 +52,7 @@ public class ApiHelper {
 
     public interface CallbackApiHelper{
         void onComplete(Drinks drinks, String cat);
+        void onFailure();
     }
 
 }

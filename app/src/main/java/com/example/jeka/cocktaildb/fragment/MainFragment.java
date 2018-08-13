@@ -27,6 +27,12 @@ public class MainFragment extends Fragment implements MyAdapter.IMyAdapterCallba
 
     public SwipeRefreshLayout swiper;
     private MyAdapter adapter;
+
+    public void setLoading(boolean loading) {
+        isLoading = loading;
+        swiper.setRefreshing(loading);
+    }
+
     private boolean isLoading = false;
 
 
